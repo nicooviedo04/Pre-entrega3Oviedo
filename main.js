@@ -45,7 +45,7 @@ function tomarDecision(objeto) {
 const objetos = [
     { nombre: "Casco", mensajeAgarrar: "Tu cabeza está protegida.", mensajeNoAgarrar: "¿Como vas a dejar el casco? Tas loco" },
     { nombre: "Chaleco anti-balas",mensajeAgarrar: "El chaleco te da mas seguridad para continuar", mensajeNoAgarrar: "Modo pesadilla activado" },
-    { nombre: "Arma", mensajeAgarrar: "Ahora estás armado y sexi...digo peligroso.", mensajeNoAgarrar: "Prefieres no tomar el arma." },
+    { nombre: "Arma", mensajeAgarrar: "Ahora estás armado y sexy...digo peligroso.", mensajeNoAgarrar: "Prefieres no tomar el arma." },
     { nombre: "sombrero de paja", mensajeAgarrar: "No se de que te va a servir, pero te queda fachero.", mensajeNoAgarrar: "Ese sombrero era del futuro rey de los piratas" },
     { nombre: "katana endemoniada", mensajeAgarrar: "¡Es como si fuera un sueño!VAS A SER EL MEJOR ESPADACHIN", mensajeNoAgarrar: "Hubieras puesto a rezar a tus enemigos" },
 ]
