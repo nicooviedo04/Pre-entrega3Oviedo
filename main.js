@@ -5,7 +5,7 @@ function simular() {
 
     let continuarSimulacion = "empezar"; 
 
-    while (continuarSimulacion === "empezar") { 
+    while (continuarSimulacion === "empezar")  { 
         const objetoEncontrado = objetos[Math.floor(Math.random() * objetos.length)];
         const respuestas = tomarDecision(objetoEncontrado);
 
