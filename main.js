@@ -1,21 +1,22 @@
 // Simulacion Principl
+// Simulacion Principal
 function simular() {
-    alert("Estás en una guerra")
+    alert("Estás en una guerra");
 
-    let continuarSimulacion = true
+    let continuarSimulacion = "empezar"; 
 
-    while (continuarSimulacion) {
-        const objetoEncontrado = objetos[Math.floor(Math.random() * objetos.length)]
-        const respuestas = tomarDecision(objetoEncontrado)
+    while (continuarSimulacion === "empezar") { 
+        const objetoEncontrado = objetos[Math.floor(Math.random() * objetos.length)];
+        const respuestas = tomarDecision(objetoEncontrado);
 
         for (const respuesta of respuestas) {
-            alert(respuesta)
+            alert(respuesta);
         }
 
-        continuarSimulacion = confirm("¿Quieres seguir buscando objetos?")
+        continuarSimulacion = prompt("¿Quieres seguir buscando objetos? (escriba 'empezar' para continuar, cualquier otra cosa para detenerse)").toLowerCase();
     }
 
-    alert("La simulación ha terminado.")
+    alert("La simulación ha terminado.");
 }
 
 function tomarDecision(objeto) {
