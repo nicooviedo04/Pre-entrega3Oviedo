@@ -1,0 +1,7 @@
+[
+    { "nombre": "Casco", "mensajeAgarrar": "Tu cabeza está protegida.", "mensajeNoAgarrar": "¿Cómo vas a dejar el casco? Estás loco." },
+    { "nombre": "Chaleco anti-balas", "mensajeAgarrar": "El chaleco te da más seguridad para continuar.", "mensajeNoAgarrar": "Modo pesadilla activado." },
+    { "nombre": "Arma", "mensajeAgarrar": "Ahora estás armado y sexy... digo peligroso.", "mensajeNoAgarrar": "Prefieres no tomar el arma." },
+    { "nombre": "Sombrero de paja", "mensajeAgarrar": "No sé de qué te va a servir, pero te queda fachero.", "mensajeNoAgarrar": "Ese sombrero era del futuro rey de los piratas." },
+    { "nombre": "Katana endemoniada", "mensajeAgarrar": "¡Es como si fuera un sueño! VAS A SER EL MEJOR ESPADACHÍN", "mensajeNoAgarrar": "Hubieras puesto a rezar a tus enemigos." }
+]
