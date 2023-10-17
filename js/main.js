@@ -1,25 +1,25 @@
-const cartasContainer = document.getElementById("cartasContainer");
+const cartasContainer = document.getElementById("cartasContainer")
 
 function mostrarCarta(carta) {
-    const cartaDiv = document.createElement("div");
-    cartaDiv.classList.add("carta");
+    const cartaDiv = document.createElement("div")
+    cartaDiv.classList.add("carta")
     //Imagenes de las cartas
-    const cartaImagen = document.createElement("img");
+    const cartaImagen = document.createElement("img")
     cartaImagen.src = carta.img;
-    cartaDiv.appendChild(cartaImagen);
-    cartasContainer.appendChild(cartaDiv);
+    cartaDiv.appendChild(cartaImagen)
+    cartasContainer.appendChild(cartaDiv)
 
-    const cartaNombre = document.createElement("h2");
+    const cartaNombre = document.createElement("h2")
     cartaNombre.textContent = carta.cardName;
     cartaDiv.appendChild(cartaNombre);
 
-    const tipoCarta = document.createElement("p");
-    tipoCarta.textContent = "Tipo: " + carta.tipo;
+    const tipoCarta = document.createElement("p")
+    tipoCarta.textContent = "Tipo: " + carta.tipo
     cartaDiv.appendChild(tipoCarta);
 
-    const mensajeCarta = document.createElement("p");
-    mensajeCarta.textContent = "Mensaje: " + carta.mensaje;
-    cartaDiv.appendChild(mensajeCarta);
+    const mensajeCarta = document.createElement("p")
+    mensajeCarta.textContent = "Mensaje: " + carta.mensaje
+    cartaDiv.appendChild(mensajeCarta)
 
 
     //botones de opciones
@@ -47,9 +47,15 @@ function mostrarCarta(carta) {
                     cartaDiv.appendChild(ganarMensaje)
                 } else {
                     const perderMensaje = document.createElement("p")
-                    perderMensaje.textContent = "¡Has perdido!";
-                    cartaDiv.appendChild(perderMensaje);
+                    perderMensaje.textContent = "¡Has perdido!"
+                    cartaDiv.appendChild(perderMensaje)
                 }
+
+ 
+                localStorage.setItem("eleccionUsuario", opcion.opcion1)
+                console.log("Elección del usuario: " + localStorage.getItem("eleccionUsuario"))
+
+
             });
 
             opcionesDiv.appendChild(opcionDiv);
@@ -83,9 +89,14 @@ function mostrarCarta(carta) {
                     perderMensaje.textContent = "¡Has perdido!";
                     cartaDiv.appendChild(perderMensaje);
                 }
+
+
+                    localStorage.setItem("eleccionUsuario", opcion.opcion2);
+                    console.log("Elección del usuario: " + localStorage.getItem("eleccionUsuario"))
+
             });
 
-            opcionesDiv.appendChild(opcionDiv);
+            opcionesDiv.appendChild(opcionDiv)
         });
     }
     //opcion 3
@@ -116,9 +127,12 @@ function mostrarCarta(carta) {
                     perderMensaje.textContent = "¡Has perdido!";
                     cartaDiv.appendChild(perderMensaje);
                 }
+
+                    localStorage.setItem("eleccionUsuario", opcion.opcion3);
+                    console.log("Elección del usuario: " + localStorage.getItem("eleccionUsuario"))
             });
 
-            opcionesDiv.appendChild(opcionDiv);
+            opcionesDiv.appendChild(opcionDiv)
             
         });
         
@@ -128,9 +142,12 @@ function mostrarCarta(carta) {
 }
 
 function seleccionarCartaAleatoria() {
-    const indiceAleatorio = Math.floor(Math.random() * card.length);
-    return card[indiceAleatorio];
+    const indiceAleatorio = Math.floor(Math.random() * card.length)
+    return card[indiceAleatorio]
 }
 
-const cartaAleatoria = seleccionarCartaAleatoria();
+const cartaAleatoria = seleccionarCartaAleatoria()
 mostrarCarta(cartaAleatoria)
+
+
+
