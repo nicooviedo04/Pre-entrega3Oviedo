@@ -5,13 +5,13 @@ function mostrarCarta(carta) {
     cartaDiv.classList.add("carta")
     //Imagenes de las cartas
     const cartaImagen = document.createElement("img")
-    cartaImagen.src = carta.img;
+    cartaImagen.src = carta.img
     cartaDiv.appendChild(cartaImagen)
     cartasContainer.appendChild(cartaDiv)
 
     const cartaNombre = document.createElement("h2")
-    cartaNombre.textContent = carta.cardName;
-    cartaDiv.appendChild(cartaNombre);
+    cartaNombre.textContent = carta.cardName
+    cartaDiv.appendChild(cartaNombre)
 
     const tipoCarta = document.createElement("p")
     tipoCarta.textContent = "Tipo: " + carta.tipo
@@ -38,20 +38,27 @@ function mostrarCarta(carta) {
                 }
 
                 const respuestaCarta = document.createElement("p")
+                respuestaCarta.classList.add ("elemento-a-borrar")
                 respuestaCarta.textContent = opcion.respuesta
                 cartaDiv.appendChild(respuestaCarta)
 
                 if (opcion.ganar) {
                     const ganarMensaje = document.createElement("p")
-                    ganarMensaje.textContent = "¡Has ganado!";
+                    ganarMensaje.classList.add ("elemento-a-borrar")
+                    ganarMensaje.textContent = "¡Has ganado!"
                     cartaDiv.appendChild(ganarMensaje)
+
+                    continuarBtn.style.display = "block"
                 } else {
                     const perderMensaje = document.createElement("p")
+                    perderMensaje.classList.add ("elemento-a-borrar")
                     perderMensaje.textContent = "¡Has perdido!"
                     cartaDiv.appendChild(perderMensaje)
+
+                    continuarBtn.style.display = "block"
                 }
 
- 
+
                 localStorage.setItem("eleccionUsuario", opcion.opcion1)
                 console.log("Elección del usuario: " + localStorage.getItem("eleccionUsuario"))
 
@@ -78,22 +85,29 @@ function mostrarCarta(carta) {
 
                 const respuestaCarta = document.createElement("p")
                 respuestaCarta.textContent = opcion.respuesta
+                respuestaCarta.classList.add("elemento-a-borrar")
                 cartaDiv.appendChild(respuestaCarta)
 
                 if (opcion.ganar) {
                     const ganarMensaje = document.createElement("p")
-                    ganarMensaje.textContent = "¡Has ganado!";
+                    ganarMensaje.classList.add ("elemento-a-borrar")
+                    ganarMensaje.textContent = "¡Has ganado!"
                     cartaDiv.appendChild(ganarMensaje)
+
+                    continuarBtn.style.display = "block"
+                    
                 } else {
                     const perderMensaje = document.createElement("p")
-                    perderMensaje.textContent = "¡Has perdido!";
-                    cartaDiv.appendChild(perderMensaje);
+                    perderMensaje.classList.add ("elemento-a-borrar")
+                    perderMensaje.textContent = "¡Has perdido!"
+                    cartaDiv.appendChild(perderMensaje)
+
+                    continuarBtn.style.display = "block"
                 }
 
 
                     localStorage.setItem("eleccionUsuario", opcion.opcion2);
                     console.log("Elección del usuario: " + localStorage.getItem("eleccionUsuario"))
-
             });
 
             opcionesDiv.appendChild(opcionDiv)
@@ -116,16 +130,24 @@ function mostrarCarta(carta) {
 
                 const respuestaCarta = document.createElement("p")
                 respuestaCarta.textContent = opcion.respuesta
+                respuestaCarta.classList.add("elemento-a-borrar")
                 cartaDiv.appendChild(respuestaCarta)
 
                 if (opcion.ganar) {
                     const ganarMensaje = document.createElement("p")
-                    ganarMensaje.textContent = "¡Has ganado!";
+                    ganarMensaje.classList.add("elemento-a-borrar")
+                    ganarMensaje.textContent = "¡Has ganado!"
                     cartaDiv.appendChild(ganarMensaje)
+
+                    continuarBtn.style.display = "block"
                 } else {
                     const perderMensaje = document.createElement("p")
-                    perderMensaje.textContent = "¡Has perdido!";
-                    cartaDiv.appendChild(perderMensaje);
+                    perderMensaje.classList.add("elemento-a-borrar")
+                    perderMensaje.textContent = "¡Has perdido!"
+
+
+                    cartaDiv.appendChild(perderMensaje)
+                    continuarBtn.style.display = "block"
                 }
 
                     localStorage.setItem("eleccionUsuario", opcion.opcion3);
@@ -141,6 +163,7 @@ function mostrarCarta(carta) {
 
 }
 
+
 function seleccionarCartaAleatoria() {
     const indiceAleatorio = Math.floor(Math.random() * card.length)
     return card[indiceAleatorio]
@@ -150,4 +173,16 @@ const cartaAleatoria = seleccionarCartaAleatoria()
 mostrarCarta(cartaAleatoria)
 
 
+const continuarBtn = document.getElementById("continuarBtn");
+    continuarBtn.addEventListener("click", () => {  
+        const nuevaCartaAleatoria = seleccionarCartaAleatoria();
+        mostrarCarta(nuevaCartaAleatoria)
+        
+        const elementosABorrar = document.querySelectorAll(".elemento-a-borrar");
 
+
+        elementosABorrar.forEach(function(elemento) {
+            elemento.parentNode.removeChild(elemento)
+        
+        });      
+});
