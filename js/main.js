@@ -185,4 +185,6 @@ const continuarBtn = document.getElementById("continuarBtn");
             elemento.parentNode.removeChild(elemento)
         
         });      
+        
+        continuarBtn.style.display = "none";
 });
